@@ -34,3 +34,15 @@ h2 {
 #items li {
 	padding-bottom: 0.75em;
 }
+#about {
+	border-top: 1px solid #ddd;
+	color: #999;
+	font-size: 0.6em;
+	line-height: 1.5em;
+	margin-top: -1px;
+	padding-top: 1.5em;
+	text-align: right;
+}
+#about a {
+	color: #99f;
+}
