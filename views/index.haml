@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title MNMLNws
+    %link{:rel => 'stylesheet', :href => '/css/mnmlnws.css', :type => 'text/css', :media => 'screen'}
+  %body
+    %ol#nav
+      %li
+        %a{:href => '/front'}= 'Front page'
+      %li
+        %a{:href => '/scotland'}= 'Scotland'
+      %li
+        %a{:href => '/technology'}= 'Technology'
+
+    %ol#items
+      - (@items).each do |item|
+        %li
+          %h2
+            %a{:href => item.link}= item.title
+          %p= item.description

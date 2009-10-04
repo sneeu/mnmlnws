@@ -1,0 +1,36 @@
+*{list-style:none;margin:0;padding:0}
+body {
+	color: #666;
+	font: 125%/1.5 "Helvetica Neue",Helvetica,Arial;
+	margin: 0 auto;
+	max-width: 40em;
+}
+a {
+	color: #00f;
+	margin: -0.5em;
+	padding: 0.5em;
+}
+a:visited {
+	color: #ccc;
+}
+a:hover {
+	background: #00f;
+	color: #fff;
+}
+h2 {
+	font-size: 1em;
+}
+#nav {
+}
+#nav li {
+	display: inline;
+}
+#nav li a {
+	display: inline-block;
+	margin: 0 0.5em 0.75em -0.5em;
+	padding: 0.5em;
+
+}
+#items li {
+	padding-bottom: 0.75em;
+}
