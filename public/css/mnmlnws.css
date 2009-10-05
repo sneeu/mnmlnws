@@ -26,10 +26,15 @@ h2 {
 	display: inline;
 }
 #nav li a {
+	color: #00f;
 	display: inline-block;
 	margin: 0 0.5em 0.75em -0.5em;
 	padding: 0.5em;
 
+}
+#nav li a:hover {
+	background: #00f;
+	color: #fff;
 }
 #items li {
 	padding-bottom: 0.75em;
