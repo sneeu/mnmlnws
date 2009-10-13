@@ -7,11 +7,23 @@ require 'rss'
 set :haml, {:format => :html5 }
 
 
-FEEDS = {
-  'front' => 'http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/front_page/rss.xml',
-  'scotland' => 'http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/scotland/rss.xml',
-  'technology' => 'http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/technology/rss.xml',
-}
+FEEDS = [
+  {
+    :slug => 'front',
+    :url => 'http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/front_page/rss.xml',
+    :title => 'Front page',
+  },
+  {
+    :slug => 'scotland',
+    :url => 'http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/scotland/rss.xml',
+    :title => 'Scotland',
+  },
+  {
+    :slug => 'technology',
+    :url => 'http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/technology/rss.xml',
+    :title => 'Technology',
+  }
+]
 
 
 before do
@@ -25,8 +37,18 @@ end
 
 
 get '/:feed' do
-  feed = FEEDS[params[:feed]]
-  rss = RSS::Parser.parse(feed)
+  @feedName = params[:feed]
+
+  FEEDS.each do |feed|
+    if feed[:slug] == @feedName
+      @theFeed = feed
+      break
+    end
+  end
+
+  rss = RSS::Parser.parse(@theFeed[:url])
+  @feeds = FEEDS
   @items = rss.items[0, 5]
+
   haml :index
 end

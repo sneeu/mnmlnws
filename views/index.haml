@@ -5,12 +5,9 @@
     <link rel="stylesheet" href="/css/mnmlnws.css" type="text/css" media="screen" />
   %body
     %ol#nav
-      %li
-        %a{:href => '/front'}= 'Front page'
-      %li
-        %a{:href => '/scotland'}= 'Scotland'
-      %li
-        %a{:href => '/technology'}= 'Technology'
+      - (@feeds).each do |feed|
+        %li
+          %a{:href => '/' + feed[:slug], :class => (@feedName == feed[:slug]) ? 'on' : ''}= feed[:title]
 
     %ol#items
       - (@items).each do |item|
