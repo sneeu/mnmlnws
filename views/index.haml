@@ -7,7 +7,10 @@
     %ol#nav
       - (@feeds).each do |feed|
         %li
-          %a{:href => '/' + feed[:slug], :class => (@feedName == feed[:slug]) ? 'on' : ''}= feed[:title]
+          - if (@feedName == feed[:slug])
+            %span= feed[:title]
+          - else
+            %a{:href => '/' + feed[:slug]}= feed[:title]
 
     %ol#items
       - (@items).each do |item|
@@ -16,4 +19,4 @@
             %a{:href => item.link}= item.title
           %p= item.description
     %p#about
-      A <a href="http://sneeu.com/">sneeu.com</a> experiment with <a href="http://www.ruby-lang.org">Ruby</a>, <a href="http://www.sinatrarb.com/">Sinatra</a>, <a href="http://haml-lang.com/">HAML</a>, and <a href="http://heroku.com/">Heroku</a>.
+      A <a href="http://sneeu.com/">sneeu.com</a> experiment with <a href="http://news.bbc.co.uk/1/hi/help/3223484.stm">BBC News feeds</a>, <a href="http://www.ruby-lang.org">Ruby</a>, <a href="http://www.sinatrarb.com/">Sinatra</a>, <a href="http://haml-lang.com/">HAML</a>, <a href="http://heroku.com/">Heroku</a>, <a href="http://git-scm.com/">Git</a>, and <a href="http://sneeu.com/blog/2009/10/minimal/">Minimalism</a>.

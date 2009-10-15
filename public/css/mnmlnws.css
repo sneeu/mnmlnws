@@ -2,7 +2,7 @@
 body {
 	color: #666;
 	font: 125%/1.5 "Helvetica Neue",Helvetica,Arial;
-	margin: 0 auto;
+	margin: 0.75em auto 0;
 	max-width: 40em;
 }
 a {
@@ -21,21 +21,24 @@ h2 {
 	font-size: 1em;
 }
 #nav {
+	border-bottom: 0.25em solid #00f;
+ 	margin: 0 -0.5em 0.75em;
 }
 #nav li {
 	display: inline;
 }
-#nav li a {
+#nav li a,
+#nav li span {
 	color: #00f;
 	display: inline-block;
-	margin: 0 0.5em 0.75em -0.5em;
-	padding: 0.5em;
-
-}
-#nav li a.on {
-	background: #ddd;
+	margin: 0;
+	padding: 0.5em 0.5em 0.25em;
 }
 #nav li a:hover {
+	background: #009;
+	color: #fff;
+}
+#nav li span {
 	background: #00f;
 	color: #fff;
 }
@@ -52,5 +55,5 @@ h2 {
 	text-align: right;
 }
 #about a {
-	color: #99f;
+	color: #999;
 }
